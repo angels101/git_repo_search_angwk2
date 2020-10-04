@@ -1,1 +1,64 @@
 <p>profile works!</p>
+
+
+<h1>GIT-API</h1>
+<p class="github">Enter your Git user-name below</p>
+<div class="container">
+    <form action="" class="enter">
+        <div class="form-group ">
+            <input type="text" placeholder="Github Username" class="form-control " [(ngModel)]="username" 
+                name="username" (keyup)="findProfile()">
+        </div>
+    </form>
+    
+    <div *ngIf="profil">
+        <div class="row">
+            <div class="col-sm-3">
+                <img class="img" src="{{profil.avatar_url}}" class="img-fluid" alt="profile">
+            </div>
+            <br>
+            <div class="col-sm-5">
+                <ul class="list-group">
+                    <li class="list-group-item" *ngIf="profil.bio">{{profil.bio}}</li>
+                    <br>
+                    <li class="list-group-item" *ngIf="profil.blog">{{profil.blog}}</li>
+                    <br>
+                    <li class="list-group-item" *ngIf="profil.email">{{profil.email}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class='row'>
+            <div class="col-sm-6">
+                <div>
+                    <hr>
+                    <p>
+                        <span class="label" class="btn btn-success"> {{profil.followers}} Followers</span>;
+                        <span class="label" class="btn btn-info"> {{profil.following}} Following </span>;
+                    </p>
+                       <p><span class="label" class="btn btn-primary"> {{profil.public_repos}} Repositories</span></p>
+                    <hr>
+                    <hr>
+                </div>
+                <p>
+                <a href="{{profil.url}}" target="_blank" class="m-6 btn btn-outline-warning">Check profile on github</a>
+                </p>
+                <hr>
+                <h2>My Repositories:</h2>
+                <br>
+                <div *ngFor="let repos of repos">
+                    <div class="card m-2" appHighlight>
+                        <div class=" text-center card-header">
+                            <h2>{{repos.name}}</h2>
+                        </div>
+                        <br><br><br>
+                        <div class="card-body">
+                            <p class="dp">{{repos.description}}</p>
+                            <p>Created on: {{repos.created_at | date }}</p>
+                        </div>
+                        <a href="{{repos.url}}" class="text-align-center" target="_blank"class="m-3 btn btn-outline-info card-footer">Check repository on github</a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
