@@ -7,7 +7,7 @@ export class HighlightDirective {
   elem: any;
   textDeco: any;
 
-  constructor(el: ElementRef ) { 
+  constructor(el:ElementRef ) { 
     el.nativeElement.style.background = "orange";
   }
   
