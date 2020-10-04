@@ -1,6 +1,16 @@
 # Reposearch
+### By Arthur_Earl[ngari]
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.4.
+## Description
+
+                                                            (#)Reposearch(#)is a website application that allows you to see what your friends are sharing on git-hub. It allows you to see their followers, the number of their repositories and also to visit their friends repositories.
+
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.8.
+#### link to site
+##  https://github.com/angels101/git_repo_search_angwk2.git
+
+
 
 ## Development server
 
